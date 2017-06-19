@@ -28,6 +28,12 @@ var sum = function(array) {
 // 3. Sum all numbers in an array containing nested arrays.
 // Example: arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
+    return array.reduce((prev, cur) => {
+        if(Array.isArray(cur)) {
+            cur = arraySum(cur);
+        }
+        return prev + cur;
+    }, 0);
 };
 
 // 4. Check if a number is even.
