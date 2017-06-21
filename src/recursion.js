@@ -120,6 +120,7 @@ var modulo = function(x, y) {
 // 12. Write a function that multiplies two numbers without using the * operator  or
 // JavaScript's Math object.
 var multiply = function(x, y) {
+
 };
 
 // 13. Write a function that divides two numbers without using the / operator  or
@@ -141,6 +142,17 @@ var gcd = function(x, y) {
 // compareStr('', '') // true
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
+    // console.log(str1, str2);
+    
+    if (str1.slice(0, 1) !== str2.slice(0, 1)) {
+        return false;
+    }
+    if ((str1.length === 0 && str2.length === 0) || (str1.length === 1 && str2.length === 1)) {
+        return true;
+    }
+    str1 = str1.slice(1);
+    str2 = str2.slice(1);
+    return compareStr(str1, str2);
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
@@ -181,7 +193,7 @@ var countOccurrence = function(array, value) {
 
 // 20. Write a recursive version of map.
 // rMap([1,2,3], timesTwo); // [2,4,6]
-var rMap = function(array, callback) {
+var rMap = function(array, callback) { 
 };
 
 // 21. Write a function that counts the number of times a key occurs in an object.
