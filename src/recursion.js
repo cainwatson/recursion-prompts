@@ -56,6 +56,22 @@ var sumBelow = function(n) {
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
 var range = function(x, y) {
+    // if (x === y || x+1 === y || y-1 === x) {
+    //     return [];
+    // }
+    // let arr = [];
+    
+    // if (x > y) {
+    //     arr = [x-1]
+    //     return arr.concat(range(x-1, y));
+    // } else {
+    //     arr = [x+1];
+    // }
+    
+    // // if (x-7 === y) {
+    //     // return arr;
+    // // }
+    // return arr.concat(range(x+1, y));
 };
 
 // 7. Compute the exponent of a number.
@@ -139,6 +155,11 @@ var createArray = function(str){
 
 // 17. Reverse the order of an array
 var reverseArr = function (array) {
+    let arr = [array[array.length-1]];
+    if (array.length === 1) {
+        return arr;
+    }
+    return arr.concat(reverseArr(array.slice(0, array.length-1)));
 };
 
 // 18. Create a new array with a given value and length.
